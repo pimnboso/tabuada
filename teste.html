@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabuada em JavaScript</title>
+  <style>
+    /* seu estilo CSS aqui */
+  </style>
+</head>
+<body>
+  <p>
+    Neste exemplo, completar a função `gerarTabuada()`. 
+    <br>
+    Usem if 
+    Esta é apenas uma estrutura básica para começar.
+  </p>
+  <h2>Tabuada em JavaScript</h2>
+
+  <label for="numero">Escolha um número:</label>
+  <input type="number" id="numero" min="1" max="10" value="1">
+
+  <button onclick="gerarTabuada()">Gerar Tabuada</button>
+
+  <div id="output"></div>
+  <hr>
+  
+  <div id="pares">
+    Escreva aqui somente as linhas com resultados pares
+  </div>
+
+  <hr>
+  <div id="impares">
+    Escreva aqui somente as linhas com resultados ímpares
+  </div>
+
+  <hr>
+
+  <script>
+    function gerarTabuada() {
+      // Obter o número escolhido pelo usuário
+      var numeroEscolhido = document.getElementById("numero").value;
+
+      // Limpar o conteúdo anterior
+      document.getElementById("output").innerHTML = "";
+      document.getElementById("pares").innerHTML = "";
+      document.getElementById("impares").innerHTML = "";
+
+      // Gerar e exibir a tabuada
+      for (var i = 1; i <= 10; i++) {
+        var resultado = numeroEscolhido * i;
+        document.getElementById("output").innerHTML += numeroEscolhido + " x " + i + " = " + resultado + "<br>";
+
+        // Adicionar resultados pares e ímpares
+        if (resultado % 2 == 0) {
+          document.getElementById("pares").innerHTML += numeroEscolhido + " x " + i + " = " + resultado + "<br>";
+        } else {
+          document.getElementById("impares").innerHTML += numeroEscolhido + " x " + i + " = " + resultado + "<br>";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
